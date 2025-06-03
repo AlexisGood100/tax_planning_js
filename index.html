@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget & Savings Tracker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen">
+
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <header class="mb-6 text-center">
+      <h1 class="text-4xl font-bold mb-2">💸 Budget & Savings Tracker</h1>
+      <p class="text-gray-600">A simple tool for understanding your income, expenses, savings, and financial goals</p>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="flex flex-wrap gap-2 justify-center border-b border-gray-300 pb-2 mb-6">
+      <button class="tab-btn px-4 py-2 text-sm font-medium rounded hover:bg-blue-100 active-tab" data-tab="budget">Budget</button>
+      <button class="tab-btn px-4 py-2 text-sm font-medium rounded hover:bg-blue-100" data-tab="savings">Savings Ratio</button>
+    
+    </nav>
+
+    <!-- Budget Tab -->
+    <section id="tab-budget" class="tab-content">
+      <form id="budget-form" class="space-y-4 bg-white p-6 rounded shadow-md">
+        <div>
+          <label for="gross-income" class="block text-sm font-medium text-gray-700">Monthly Gross Income ($)</label>
+          <input type="number" id="gross-income" class="w-full border border-gray-300 rounded px-3 py-2 mt-1" required />
+        </div>
+
+        <div>
+          <label for="state-select" class="block text-sm font-medium text-gray-700">Select Your State</label>
+        <select id="state-select"
+  class="w-full border border-gray-300 rounded px-3 py-2 mt-1 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 z-10 relative">
+</select>
+
+        </div>
+
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          Estimate Withholding & Net Pay
+        </button>
+      </form>
+
+      <div id="net-income-result" class="mt-4 text-lg font-medium text-green-700"></div>
+    </section>
+
+    <!-- Savings Tab -->
+    <section id="tab-savings" class="tab-content hidden">
+      <form id="savings-form" class="space-y-4 bg-white p-6 rounded shadow-md">
+        <div>
+          <label for="monthly-savings" class="block text-sm font-medium text-gray-700">
+            Monthly Savings ($)
+          </label>
+          <input type="number" id="monthly-savings" class="w-full border border-gray-300 rounded px-3 py-2 mt-1" required />
+        </div>
+
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          Calculate Savings Ratio
+        </button>
+      </form>
+
+      <div id="savings-result" class="mt-4 text-lg font-medium"></div>
+    </section>
+
+  
+
+  </div>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/budget.js"></script>
+  <script src="./js/savings.js"></script>
+  <script src="./js/goals.js"></script>
+
+</body>
+</html>
